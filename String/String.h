@@ -5,7 +5,7 @@ class String
 {
 public:
 	String();                     // default constructor
-	String(const char* a);        // constructor
+	explicit String(const char* a);        // constructor.  'explicit' means "implicit construction" is not allowed.  
 	String(const String& s);      // copy constructor
 	~String();                    // destructor
 	String(String&& s);           // move constructor

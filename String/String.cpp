@@ -77,22 +77,24 @@ String& String::operator=(String&& rhs)   /*move assignment operator*/
 String& String::operator+=(const String& rhs) /* operator+= overloading, pass the parameter by reference, return the result by reference. */
 /* "*this += rhs" means "*this = *this + rhs, *this will be mordified after the function. */
 {
-	char* _elem_new = new char[_size + rhs._size + 1];
+	char* elem_new = new char[_size + rhs._size + 1];
+		
+	for (size_t i = 0; i < _size; ++i)
+	{
+		elem_new[i] = _elem[i];
+	}
 	
-	size_t i = 0;
-	for (; i < _size; ++i)
+	for (size_t j = 0; j < rhs._size; ++j)
 	{
-		_elem_new[i] = _elem[i];
+		elem_new[_size + j] = rhs._elem[j];
 	}
-	size_t j = 0;
-	for (; j < rhs._size + 1; ++i, ++j)
-	{
-		_elem_new[i] = rhs._elem[j];
-	}
+	elem_new[_size + rhs._size] = '\0';
+
 	_size += rhs._size;
 	delete[] _elem;
-	_elem = _elem_new;
-	_elem_new = nullptr;
+	_elem = elem_new;
+	// elem_new = nullptr;         // no need to make a local variable null          
+	
 	std::cout << "+= operator" << std::endl;
 	return *this;
 }
