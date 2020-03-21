@@ -1,7 +1,7 @@
 #include "String.h"		
 
 String::String()               // default constructor
-	:_elem(new char[1]),
+	:_elem(new char[EXTRA]),
 	_size(0)
 {
 	_elem[0] = '\0';

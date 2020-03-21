@@ -20,6 +20,7 @@ public:
 private:
 	char* _elem;
 	size_t _size;
+	static constexpr size_t EXTRA = 10;
 };
 
 std::ostream& operator<<(std::ostream& output, const String& s);
