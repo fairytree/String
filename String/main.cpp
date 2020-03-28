@@ -14,7 +14,7 @@ int main()
 	std::cout << "c: " << c << '\n' << std::endl;
 
 	String d;
-	d = a + b;     // pay attention to how this code is implemented. 
+	d = a + b;     // pay attention to how this code is implemented, see String.cpp for details
 	std::cout << "d: " << d << '\n' << std::endl;
 
 	String e(std::move(a));

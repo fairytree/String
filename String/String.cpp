@@ -114,6 +114,17 @@ String operator+(String lhs, const String& rhs) // operator+ overloading
 	return lhs;  // return the result by value (just a copy) (uses move constructor)	
 }
 
+//default constructor   d
+//copy constructor      parameter lhs
+//+ operator            + operator
+//+= operator           lhs += rhs
+//move constructor      return lhs
+//deconstructor         destruct lhs
+//move assignment operator     move value of "a + b" to d
+//deconstructor                destruct "a + b"
+//d : AAAAAAAAA
+
+
 std::ostream& operator<<(std::ostream& output, const String& rhs)
 {
 	output << rhs._elem;
