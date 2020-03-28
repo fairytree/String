@@ -115,7 +115,7 @@ String operator+(String lhs, const String& rhs) // operator+ overloading
 }
 
 //default constructor   d
-//copy constructor      parameter lhs
+//copy constructor      parameter lhs as in the operator+ function
 //+ operator            + operator
 //+= operator           lhs += rhs
 //move constructor      return lhs
